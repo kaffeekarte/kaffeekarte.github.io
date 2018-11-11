@@ -1,0 +1,75 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+html, body, #map {
+	height: 100%;
+	width: 100%;
+}
+a {
+	color:#0078a8;
+}
+details {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+details summary {
+	font-size:14px;
+	color:grey;
+	font-weight:bold;
+}
+ul {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+ul:hover {
+	cursor:pointer;
+	background-color:#d9d9d9;
+}
+.specialbtn {
+	text-decoration:none;
+	background-color:rgba(51, 102, 255, 0.1);
+	border:2px solid #2a8db7;
+	border-radius:5px;
+	padding:5px;
+	margin-right:10px;
+	margin-top:5px;
+	font-size:14px;
+	display:inline-block;
+}
+.info {
+	font-size:22px;
+	text-align:center;
+	z-index:2;
+	position:fixed;
+	bottom:50%;
+	width:100%;
+	border-top:1px solid #2952a3;
+	border-bottom:1px solid #2952a3;
+	border-radius:100px;
+	/*border:2px solid #e68a00;*/
+	background-color:rgba(71, 117, 209, 0.5);
+}
+.leaflet-top:hover #extended{
+	display:block;
+}
+input[type=button] {
+	margin-top:10px;
+}
+#map{
+	z-index:1;
+}
+#extended{
+	display:none;
+}
+#overpass-api-controls {
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+}
+#overpass-api-controls a {
+	display: inline;
+}
+#searchfield {
+	padding-top:10px;
+	padding-bottom:10px;
+}

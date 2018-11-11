@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kaffeekarte</title>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+  	<div class='info' id='infoPopup' style='display:none;'></div>
+    <div id="map">
+      <div class="leaflet-control-container">
+        <div class="leaflet-top leaflet-right">
+          <div id="overpass-api-controls" class="leaflet-bar leaflet-control">
+            <div id="searchgroup">
+              <input type='text' onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
+              <div id="autocomplete"></div>
+              <label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
+            </div>
+            <div id='extended'>
+            	<hr/>Suche einschränken auf:
+            </div>
+          <input id="query-button" type='button' value='Neu laden'><br/>
+          <a href="/about.html" target='_blank;' style="color:#0078a8;">Über das Projekt</a>
+          </div>
+        </div>
+      </div>
+
+        <div id="description">
+          <h1>Kaffee Karte</h1>
+          Wo gibt es Kaffee? Wo kann ich meinen ToGo-Becher mitbringen? <a href="https://wiki.openstreetmap.org/wiki/Kaffee-Karte">Mehr Informationn</a>.
+        </div>
+
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/osmtogeojson@2.2.12/osmtogeojson.js"></script>
+    <script src="/maplyrk2.js"></script>
+    <script src="/overpass.js"></script>
+  </body>
+</html>
