@@ -144,7 +144,7 @@
         var wcafe = 'way["amenity"="cafe"]' + overpassQuery + '(' + bounds + ');';
         var wcoffee = 'way["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
         var query = '?data=[out:json][timeout:15];(' + ncafe + ncoffee + wcafe + wcoffee +');out body geom;';
-        var baseUrl = 'http://overpass-api.de/api/interpreter';
+        var baseUrl = 'https://overpass-api.de/api/interpreter';
         var resultUrl = baseUrl + query;
         return resultUrl;
       }
