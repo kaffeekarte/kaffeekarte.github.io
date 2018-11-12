@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-  	<div class='info' id='infoPopup' style='display:none;'></div>
+  	<div class="info" id="infoPopup" style="display:none;"></div>
     <div id="map">
       <div class="leaflet-control-container">
         	<div class="leaflet-top leaflet-right">
         	  <div id="overpass-api-controls" class="leaflet-bar leaflet-control">
         	  	<img src="search.svg" class="searchImg" />
-        	  	<div id='extended'>
+        	  	<div id="extended">
            		<div id="searchgroup">
-          	    <input type='text' onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
+          	    <input type="text" onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
             	  <div id="autocomplete"></div>
             	  <label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
             	</div>
             	<hr/>Suche einschränken auf:
-            	<div id='filtersGround'></div>
-          		<input id="query-button" type='button' value='Neu laden'><br/>
-          		<a href="/README.md" target='_blank;' style="color:#0078a8;">Über das Projekt</a>
+            	<div id="filtersGround"></div>
+          		<input id="query-button" type="button" value="Neu laden"><br/>
+          		<a href="/README.md" target="_blank;" style="color:#0078a8;">Über das Projekt</a>
           		</div>
           </div>
         </div>
