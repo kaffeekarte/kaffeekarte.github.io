@@ -39,18 +39,21 @@ ul:hover {
 }
 .info {
 	font-size:22px;
+	top:0px;
 	text-align:center;
 	z-index:2;
 	position:fixed;
-	bottom:50%;
 	width:100%;
-	border-top:1px solid #2952a3;
-	border-bottom:1px solid #2952a3;
-	border-radius:100px;
-	/*border:2px solid #e68a00;*/
-	background-color:rgba(71, 117, 209, 0.5);
+	border-bottom:1px solid rgb(115, 115, 115, 0.6);
+	background-color:rgba(255, 255, 255, 0.6);
 }
 .leaflet-top:hover #extended{
+	display:block;
+}
+.leaflet-right:hover .searchImg {
+	display:none;
+}
+.searchImg:hover ~ #extended {
 	display:block;
 }
 input[type=button] {
@@ -61,6 +64,12 @@ input[type=button] {
 }
 #extended{
 	display:none;
+}
+.searchImg {
+	display:block;
+	height:40px;
+	width:40px;
+	background-color:white;
 }
 #overpass-api-controls {
 	padding: 10px;

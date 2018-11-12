@@ -1,18 +1,18 @@
 
       function createfn(){
-        var oac = document.getElementById("extended");
+        var oac = document.getElementById("filtersGround");
         for (var [key, value] of coffee_keys.entries()) {
           var entry = document.createElement('input');
           entry.type = "checkbox";
           entry.id = key;
-          oac.appendChild(document.createElement('br'));
           oac.appendChild(entry);
           oac.appendChild(document.createTextNode(key));
+          oac.appendChild(document.createElement('br'));
         };
 
       };
       function locationFound(e) {
-      	document.getElementById('query-button').click(); //Code does not work, fix me
+      	document.getElementById('query-button').click();
       	showGlobalPopup("Cafès in Deiner Nähe");
       }
       function locationError(e) {
@@ -24,7 +24,6 @@
       	//WEST: Number decreases when moving to the left (West)
       	//EAST: Number increases when moving to the right (East)
       	var accuracy = 0.001;
-      	console.log("test2");
       	var clear = 0;
       	var loadingAllowed = false;
       	var south_new = map.getBounds().getSouth();
@@ -230,9 +229,9 @@ function getStateFromHash() {
 	var hash = location.hash;
 	if (hash != "") {
 		hash = hash.replace("#", "").split("&");
-		zoomLevel = parseInt(hash[0]);
-		saved_lat = parseInt(hash[1]);
-		saved_lon = parseInt(hash[2]);
+		zoomLevel = Number(hash[0]);
+		saved_lat = Number(hash[1]);
+		saved_lon = Number(hash[2]);
 		map.setView([saved_lat, saved_lon], zoomLevel);
 	}
 }
@@ -245,19 +244,20 @@ coffee_keys.set("ToGo", "\"drink:coffee:togo\"~\"yes|deposit|only\"");
 coffee_keys.set("Wickeltisch", "\"diaper\"=\"yes\"");
 var map = L.map('map').setView([saved_lat, saved_lon], zoomLevel);
 map.options.maxZoom = 17;
-map.options.minZoom = 15;
+map.options.minZoom = 13;
 maxSouth = map.getBounds().getSouth();
 maxWest = map.getBounds().getWest();
 getStateFromHash();
-//map.on("locationfound", locationFound);
-//map.on("locationerror", locationError);
-//ap.on("click", function(e) {location.hash = String(map.getZoom()) + "&" + String(e.latlng.lat) + "&" + String(e.latlng.lng);})
+map.on("locationfound", locationFound);
+map.on("locationerror", locationError);
+map.on("click", function(e) {location.hash = String(map.getZoom()) + "&" + String(e.latlng.lat) + "&" + String(e.latlng.lng);})
 map.on("moveend", locateNewArea);
 var Layergroup = new L.LayerGroup();
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 17,
-  attribution: 'Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Map Tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  attribution: 'Map data &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Map Tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+map.locate({setView: true});
 //get state from hash
 //init filter
 window.onload=createfn();

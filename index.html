@@ -11,18 +11,20 @@
   	<div class='info' id='infoPopup' style='display:none;'></div>
     <div id="map">
       <div class="leaflet-control-container">
-        <div class="leaflet-top leaflet-right">
-          <div id="overpass-api-controls" class="leaflet-bar leaflet-control">
-            <div id="searchgroup">
-              <input type='text' onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
-              <div id="autocomplete"></div>
-              <label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
-            </div>
-            <div id='extended'>
+        	<div class="leaflet-top leaflet-right">
+        	  <div id="overpass-api-controls" class="leaflet-bar leaflet-control">
+        	  	<img src="search.svg" class="searchImg" />
+        	  	<div id='extended'>
+           		<div id="searchgroup">
+          	    <input type='text' onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
+            	  <div id="autocomplete"></div>
+            	  <label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
+            	</div>
             	<hr/>Suche einschränken auf:
-            </div>
-          <input id="query-button" type='button' value='Neu laden'><br/>
-          <a href="/about.html" target='_blank;' style="color:#0078a8;">Über das Projekt</a>
+            	<div id='filtersGround'></div>
+          		<input id="query-button" type='button' value='Neu laden'><br/>
+          		<a href="/README.md" target='_blank;' style="color:#0078a8;">Über das Projekt</a>
+          		</div>
           </div>
         </div>
       </div>
@@ -35,7 +37,7 @@
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://unpkg.com/osmtogeojson@2.2.12/osmtogeojson.js"></script>
-    <script src="/maplyrk2.js"></script>
+    <script src="/searchbox.js"></script>
     <script src="/overpass.js"></script>
   </body>
 </html>
