@@ -13,7 +13,7 @@
       };
       function locationFound(e) {
       	document.getElementById('query-button').click();
-      	showGlobalPopup("Cafès in Deiner Nähe");
+      	showGlobalPopup("Cafés in Deiner Nähe");
       }
       function locationError(e) {
       	showGlobalPopup("Konnte Dich nicht finden");
@@ -115,7 +115,7 @@
       }
       function parseOpening_hours(value) {
       	var toTranslate = {"Mo" : "Montag", "Tu" : "Dienstag", "We" : "Mittwoch", "Th" : "Donnerstag", "Fr" : "Freitag", "Sa" : "Samstag", "Su" : "Sonntag", "off" : "geschlossen", "Jan" : "Januar", "Feb" : "Februar", "Mar" : "März", "Apr" : "April", "May" : "Mai", "Jun" : "Juni", "Jul" : "Juli", "Aug" : "August", "Sep" : "September", "Oct" : "Oktober", "Nov" : "November", "Dec" : "Dezember", "PH" : "Feiertag"};
-      	var syntaxToHTML = {"; " : "<br/>", ";" : "<br/>",  "," : ", ", "-" : " - ", ", " : "<br/>"}
+      	var syntaxToHTML = {"; " : "<br/>", ";" : "<br/>",  "," : ", ", "-" : " - "}
       	for (var item in toTranslate) {
       		value = value.replace(new RegExp(item, "g"), "<b>" + toTranslate[item] + "</b>");
       	}
@@ -142,7 +142,7 @@
         var ncoffee = 'node["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
         var wcafe = 'way["amenity"="cafe"]' + overpassQuery + '(' + bounds + ');';
         var wcoffee = 'way["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
-        var query = '?data=[out:json][timeout:15];(' + ncafe + ncoffee + wcafe + wcoffee +');out body geom;';
+        var query = '?data=[out:json][timeout:15];(' + ncafe + ncoffee + wcafe + wcoffee +');out body center;';
         var baseUrl = 'https://overpass-api.de/api/interpreter';
         var resultUrl = baseUrl + query;
         return resultUrl;
@@ -205,7 +205,8 @@
               popupContent += "<details><summary>Kontakt</summary>Tel: " + phone + "<br/>Mail: " + email + "<br/>Webseite: " + website + "</details>";
               // Add accessibility informations to POI details view
               popupContent += "<details><summary>Eignung für Rollstuhlfahrer</summary>Barrierefrei: " + wheelchair + "<br/>Barrierefreie Toilette(n): "+ toilets_wheelchair + "<br/><br/>" + wheelchair_descr + "</details>";
-              popupContent += "<a target=\"_blank\" href=\"https://www.openstreetmap.org/edit?" + String(feature.properties.type) + "=" + String(feature.properties.id) + "\">Mit OSM editieren</a>";
+              popupContent += "<a target=\"_blank\" title=\"Bei OSM registrierte Nutzer können diese POI direkt bearbeiten. Veraltete Informationen raus nehmen und neue hinzufügen.\" href=\"https://www.openstreetmap.org/edit?" + String(feature.properties.type) + "=" + String(feature.properties.id) + "\">Mit OSM editieren</a>&nbsp;&nbsp;";
+              popupContent += "<a target=\"_blank\" title=\"Eine falsche Information entdeckt? Informiere mithilfe dieses Linkes die OSM Community.\" href=\"https://www.openstreetmap.org/note/new#map=15/" + feature.geometry.coordinates[1] + "/" + feature.geometry.coordinates[0] + "&layers=N\">Falschinformation melden</a>";
               layer.on("click", function(layer=layer, type=String(feature.properties.type), id=String(feature.properties.id)) {
               	if (popupContent.indexOf("%data_address%") > -1) {
               		$.get("https://nominatim.openstreetmap.org/reverse?accept-language=" + languageOfUser + "&format=json&osm_type=" + type[0].toUpperCase() + "&osm_id=" + id, function(data, status, xhr, trash) {
