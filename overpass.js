@@ -142,7 +142,8 @@
         var ncoffee = 'node["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
         var wcafe = 'way["amenity"="cafe"]' + overpassQuery + '(' + bounds + ');';
         var wcoffee = 'way["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
-        ncofee = ncoffee + 'node["cuisine"~"coffee_shop"]' + overpassQuery + '(' + bounds + ');';
+        ncoffee += 'node["cuisine"~"coffee_shop"]' + overpassQuery + '(' + bounds + ');';
+        ncoffee += 'node["vending"="coffee"]' + overpassQuery + '(' + bounds + ');';
         wcoffee = wcoffee + 'way["cuisine"~"coffee_shop"]' + overpassQuery + '(' + bounds + ');';
         var query = '?data=[out:json][timeout:15];(' + ncafe + ncoffee + wcafe + wcoffee +');out body center;';
         var baseUrl = 'https://overpass-api.de/api/interpreter';
@@ -225,7 +226,7 @@
               			var street = address["road"] || address["pedestrian"] || address["street"] || address["footway"] || address["path"];
               			var housenumber = address["housenumber"] || address["house_number"] || "";
               			var postcode = address["postcode"] || "";
-              			var city = address["city"] || document.getElementById("searchfield").value;
+              			var city = address["city"] || address["town"] || address["county"] || document.getElementById("searchfield").value;
               			layer.target.bindPopup(popupContent.replace("%data_address%", street + " " + housenumber + "<br/>" + postcode + " " + city));
               			layer.target.openPopup();
               		});
