@@ -18,6 +18,11 @@ details summary {
 	color:grey;
 	font-weight:bold;
 }
+h3 {
+	display:inline;
+	margin-bottom:0px;
+	color:grey;
+}
 ul {
 	padding-top:5px;
 	padding-bottom:5px;

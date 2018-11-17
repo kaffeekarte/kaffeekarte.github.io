@@ -142,6 +142,8 @@
         var ncoffee = 'node["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
         var wcafe = 'way["amenity"="cafe"]' + overpassQuery + '(' + bounds + ');';
         var wcoffee = 'way["drink:coffee"="yes"]' + overpassQuery + '(' + bounds + ');';
+        ncofee = ncoffee + 'node["cuisine"~"coffee_shop"]' + overpassQuery + '(' + bounds + ');';
+        wcoffee = wcoffee + 'way["cuisine"~"coffee_shop"]' + overpassQuery + '(' + bounds + ');';
         var query = '?data=[out:json][timeout:15];(' + ncafe + ncoffee + wcafe + wcoffee +');out body center;';
         var baseUrl = 'https://overpass-api.de/api/interpreter';
         var resultUrl = baseUrl + query;
@@ -170,15 +172,18 @@
             onEachFeature: function (feature, layer) {
               // declare variables
               var popupContent = "";
+              var codeBefore = "";
+              var codeAfter = "";
               var amenity = feature.properties.tags["amenity"] || "";
-              var name = feature.properties.tags["name"] || "";;
+              var name = feature.properties.tags["name"] || "";
+              var operator = feature.properties.tags["operator"] || "";
               var street = feature.properties.tags["addr:street"] || feature.properties.tags["street"] || "Straße unbekannt";
               var housenumber = feature.properties.tags["addr:housenumber"] || feature.properties.tags["housenumber"] || "Hausnummer unbekannt";
               var postcode = feature.properties.tags["addr:postcode"] || feature.properties.tags["postcode"] || "Postleitzahl unbekannt";
-              var city = feature.properties.tags["addr:city"] || feature.properties.tags[":city"] || "Stadtname unbekannt"; 
+              var city = feature.properties.tags["addr:city"] || feature.properties.tags["city"] || "Stadtname unbekannt"; 
               var phone = feature.properties.tags["phone"] || feature.properties.tags["contact:phone"] || "Unbekannt";
               var email = feature.properties.tags["email"] || feature.properties.tags["contact:email"] || "Unbekannt";
-              var website = feature.properties.tags["website"] || feature.properties.tags["contact:website"] || "Unbekannt";
+              var website = feature.properties.tags["website"] || feature.properties.tags["contact:website"] || feature.properties.tags["contact:facebook"] || "Unbekannt";
               var wheelchair = ((feature.properties.tags["wheelchair"] == "yes") ? "Ja" : ((feature.properties.tags["wheelchair"] == "limited") ? "Teilweise" : "Nein"));
               var toilets_wheelchair = ((feature.properties.tags["toilets:wheelchair"] == "yes") ? "Ja" : "Nein");
               var wheelchair_descr = feature.properties.tags["wheelchair:description"] || "<i>Keine zusätzliche Beschreibung vorhanden</i>";
@@ -190,12 +195,18 @@
               	opening_hours = parseOpening_hours(feature.properties.tags["opening_hours"]);
               }
               if (website != "Unbekannt") {
+              	if (!website.startsWith("http://") && !website.startsWith("https://")) {
+              		website = "http://" + website
+              	}
               	name = "<a target=\"_blank\" href=\"" + website + "\">" + name + "</a>";
+              }
+              if (operator != "") {
+              	codeBefore = "<h3>" + operator + "</h3> / "
               }
               email = ((email == "Unbekannt") ? email : "<a href=mailto:\"" + email + "\">" + email + "</a>");
               website = ((website == "Unbekannt") ? website : "<a target=\"_blank\" href=\"" + website + "\">" + website + "</a>");
               // add better look
-              popupContent += "<h3 style='margin-bottom:0px;color:grey;'>" + amenity + "</h3><h1 style='margin:0px;'>" + name + "</h1>";
+              popupContent += codeBefore + "<h3>" + amenity + "</h3>" + codeAfter + "<h1 style='margin:0px;'>" + name + "</h1>";
               popupContent += phone_button + email_button;
               // Add address to POI details view
               popupContent += "<details open><summary>Adresse</summary>%data_address%</details>";
@@ -211,7 +222,7 @@
               	if (popupContent.indexOf("%data_address%") > -1) {
               		$.get("https://nominatim.openstreetmap.org/reverse?accept-language=" + languageOfUser + "&format=json&osm_type=" + type[0].toUpperCase() + "&osm_id=" + id, function(data, status, xhr, trash) {
               			var address = data["address"];
-              			var street = address["road"] || address["street"] || address["footway"] || address["path"];
+              			var street = address["road"] || address["pedestrian"] || address["street"] || address["footway"] || address["path"];
               			var housenumber = address["housenumber"] || address["house_number"] || "";
               			var postcode = address["postcode"] || "";
               			var city = address["city"] || document.getElementById("searchfield").value;
