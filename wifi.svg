@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="144mm"
+   viewBox="0 0 210 144"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="wifi.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient4493"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4491" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.68328423"
+     inkscape:cx="305.72984"
+     inkscape:cy="475.67442"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="960"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-153)">
+    <ellipse
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.76500034;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4618"
+       cx="99.903534"
+       cy="252.85661"
+       rx="17.425032"
+       ry="15.488917" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.35991049;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path4620"
+       sodipodi:cx="142.88527"
+       sodipodi:cy="146.37029"
+       sodipodi:expansion="1"
+       sodipodi:revolution="3.2180653"
+       sodipodi:radius="67.151321"
+       sodipodi:argument="-22.623545"
+       sodipodi:t0="0.93465418"
+       d="M 90.507703,180.95088 C 72.982496,157.23443 74.591098,123.81963 93.194301,101.20273"
+       transform="matrix(0,1.4109764,-1.1970304,0,273.41868,106.00946)" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.2076273;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path4637"
+       sodipodi:cx="-100.33369"
+       sodipodi:cy="-294.4325"
+       sodipodi:expansion="1"
+       sodipodi:revolution="3.2438681"
+       sodipodi:radius="67.936333"
+       sodipodi:argument="-17.922527"
+       sodipodi:t0="0.91912085"
+       d="m -57.317897,-249.17095 c -24.5303,25.93853 -66.548483,25.69938 -92.072533,1.36113 -1.27201,-1.21292 -2.49668,-2.47546 -3.6705,-3.78363"
+       transform="matrix(-1.3836165,0,0,-1.2728275,-40.719971,-101.15079)" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.94523907;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path4641"
+       sodipodi:cx="-225.37935"
+       sodipodi:cy="-93.434662"
+       sodipodi:expansion="1"
+       sodipodi:revolution="3.3266544"
+       sodipodi:radius="85.195045"
+       sodipodi:argument="-19.903854"
+       sodipodi:t0="0.91013056"
+       d="m -175.99453,-153.21239 c 35.58633,26.38294 41.53707,78.183528 15.32883,113.240308 -5.20031,6.956059 -11.48307,13.091207 -18.54873,18.140463"
+       transform="matrix(0,-1.1087515,1.3071391,0,217.24739,6.811492)" />
+  </g>
+</svg>
