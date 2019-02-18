@@ -24,6 +24,9 @@ h3 {
 	margin-bottom:0px;
 	color:grey;
 }
+input[type=button] {
+	margin-top:10px;
+}
 ul {
 	padding-top:5px;
 	padding-bottom:5px;
@@ -67,8 +70,9 @@ ul:hover {
 .searchImg:hover + #extended {
 	display:block;
 }
-input[type=button] {
-	margin-top:10px;
+.icon {
+	width:50px;
+	height:50px;
 }
 #map{
 	z-index:1;
@@ -92,14 +96,6 @@ input[type=button] {
 #searchfield {
 	padding-top:10px;
 	padding-bottom:10px;
-}
-#smokingPermitted {
-	width:50px;
-	height:50px;
-}
-#wlanIcon {
-	width:50px;
-	height:50px;
 }
 #positiveIcon {
 	width:30px;

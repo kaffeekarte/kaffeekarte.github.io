@@ -181,14 +181,15 @@
               var name = feature.properties.tags["name"] || "";
               var operator = feature.properties.tags["operator"] || "";
               var description = feature.properties.tags["description"] || "";
+              var dog = feature.properties.tags["dog"] || "no";
               var street = feature.properties.tags["addr:street"] || feature.properties.tags["street"] || "Straße unbekannt";
               var housenumber = feature.properties.tags["addr:housenumber"] || feature.properties.tags["housenumber"] || "Hausnummer unbekannt";
               var postcode = feature.properties.tags["addr:postcode"] || feature.properties.tags["postcode"] || "Postleitzahl unbekannt";
               var city = feature.properties.tags["addr:city"] || feature.properties.tags["city"] || "Stadtname unbekannt"; 
               var phone = feature.properties.tags["phone"] || feature.properties.tags["contact:phone"] || "Unbekannt";
               var email = feature.properties.tags["email"] || feature.properties.tags["contact:email"] || "Unbekannt";
-              var smoking = feature.properties.tags["smoking"] || "no"
-              var wlan = feature.properties.tags["internet_access"] || "no"
+              var smoking = feature.properties.tags["smoking"] || "no";
+              var wlan = feature.properties.tags["internet_access"] || "no";
               var website = feature.properties.tags["website"] || feature.properties.tags["contact:website"] || feature.properties.tags["contact:facebook"] || "Unbekannt";
               var wheelchair = ((feature.properties.tags["wheelchair"] == "yes") ? "Ja" : ((feature.properties.tags["wheelchair"] == "limited") ? "Teilweise" : "Nein"));
               var toilets_wheelchair = ((feature.properties.tags["toilets:wheelchair"] == "yes") ? "Ja" : "Nein");
@@ -210,12 +211,17 @@
               	codeBefore = "<h3>" + operator + "</h3> / ";
               }
               if (smoking != "no") {
-              	smoking = "<img id='smokingPermitted' alt='Rauchen erlaubt' src='smoking.svg' />";
+              	smoking = "<img class='icon' alt='Rauchen erlaubt' src='smoking.svg' />";
               } else {
               	smoking = "";
               }
+              if (dog != "no") {
+              	dog = "<img class='icon' alt='Hunde erlaubt' src='dog.svg' />";
+              } else {
+              	dog = "";
+              }
               if (wlan!= "no") {
-              	wlan = "<img id='wlanIcon' src='wifi.svg' alt='Wlan-Hotspot' />";
+              	wlan = "<img class='icon' src='wifi.svg' alt='Wlan-Hotspot' />";
               } else {
               	wlan = "";
               }
@@ -235,7 +241,7 @@
               // add better look
               popupContent += codeBefore + "<h3>" + amenity + "</h3>" + codeAfter + "<h1 style='margin:0px;'>" + name + "</h1>";
               popupContent += phone_button + email_button;
-              popupContent += "<div>" + smoking + wlan + "</div>"
+              popupContent += "<div>" + smoking + wlan + dog + "</div>"
               // Add POI description
               if (description != "") {
               	if (160 >= description.length) {
