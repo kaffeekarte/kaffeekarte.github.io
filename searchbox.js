@@ -1,5 +1,4 @@
-'use strict';
-var supported_languages = ["de", "en", "it", "fr"]
+var supported_languages = ["de", "en", "it", "fr"];
 var saved_lat = 48.160474925320834;
 var saved_lon = 11.4992094039917;
 var maxSouth = 0;
@@ -17,12 +16,12 @@ function showGlobalPopup(m) {
 		setTimeout(function() {
 			document.getElementById("infoPopup").style.display = "none";
 		}, 3000);
-		}, 1000);
+	}, 1000);
 }
 function jumpto(lat, lon, locname="") {
 	if (locname != "") {
 		$("#searchfield").value = locname;
-	}
+}
 	$("#autocomplete").hide();
 	map.setView([lat, lon]);
 	location.hash = String(map.getZoom()) + "&" + String(lat) + "&" + String(lon);
@@ -62,13 +61,10 @@ function geocode() {
 		}, function(data) {
 			var current_bounds = map.getBounds();
 			var autocomplete_content = "<li>";
-
 			$.each(data.features, function(number, feature) {
 				var latlng = [feature.geometry.coordinates[1], feature.geometry.coordinates[0]];
-
 				autocomplete_content += "<ul onclick='jumpto(" + latlng[0] + ", " + latlng[1] + ", \"" + feature.properties.name + ", " + feature.properties.country + "\")'>" + feature.properties.name + ", " + feature.properties.country + "</ul>";
 			});
-
 			$("#autocomplete").html(autocomplete_content+"</li>");
 			$("#autocomplete").show();
 		});

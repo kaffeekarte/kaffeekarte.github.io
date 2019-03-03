@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kaffeekarte</title>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha384-roIisdke7t73jKsr2CM69N0uJch+a+lQBCuw3Li2ZuLKaWn46fxTAp31h9VA4odd" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-  	<div class="info" id="infoPopup" style="display:none;"></div>
-    <div id="map">
-      <div class="leaflet-control-container">
-        	<div class="leaflet-top leaflet-right">
-        	  <div id="overpass-api-controls" class="leaflet-bar leaflet-control">
-        	  	<img src="search.svg" class="searchImg" />
-        	  	<div id="extended">
-           		<div id="searchgroup">
-          	    <input type="text" onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
-            	  <div id="autocomplete"></div>
-            	  <label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
-            	</div>
-            	<hr/>Suche einschränken auf:
-            	<div id="filtersGround"></div>
-          		<input id="query-button" type="button" value="Neu laden"><br/>
-          		<a href="https://github.com/kaffeekarte/kaffeekarte.github.io/blob/master/README.md" target="_blank;" style="color:#0078a8;">Über das Projekt</a>
-          		</div>
-          </div>
-        </div>
-      </div>
-
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha384-9fzrQY4JobN87hT5sQ0JnL9XZQ5q94Qj46ZFqpcBzz03D3UDKAkN/pKct1IVlP2Y" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/osmtogeojson@2.2.12/osmtogeojson.js" integrity="sha384-fAlU0IIimkdHdu7mvEMWsgmkz5GQe7P6r0z7pHCYOru6JzHyo3GcNwqxARCMVU02" crossorigin="anonymous"></script>
-    <script src="/searchbox.js"></script>
-    <script src="/overpass.js"></script>
-  </body>
+	<head>
+		<title>Kaffeekarte</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha384-roIisdke7t73jKsr2CM69N0uJch+a+lQBCuw3Li2ZuLKaWn46fxTAp31h9VA4odd" crossorigin="anonymous" />
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<div class="info" id="infoPopup" style="display:none;"></div>
+		<div id="map">
+			<div class="leaflet-control-container">
+				<div class="leaflet-top leaflet-right">
+					<div id="overpass-api-controls" class="leaflet-bar leaflet-control">
+						<img src="search.svg" class="searchImg" />
+						<div id="extended">
+							<div id="searchgroup">
+								<input type="text" onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
+								<div id="autocomplete"></div>
+								<label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
+							</div>
+							<hr/>Suche einschränken auf:
+							<div id="filtersGround"></div>
+							<input id="query-button" type="button" value="Neu laden"><br/>
+							<a href="https://github.com/kaffeekarte/kaffeekarte.github.io/blob/master/README.md" target="_blank;" style="color:#0078a8;">Über das Projekt</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha384-9fzrQY4JobN87hT5sQ0JnL9XZQ5q94Qj46ZFqpcBzz03D3UDKAkN/pKct1IVlP2Y" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/osmtogeojson@2.2.12/osmtogeojson.js" integrity="sha384-fAlU0IIimkdHdu7mvEMWsgmkz5GQe7P6r0z7pHCYOru6JzHyo3GcNwqxARCMVU02" crossorigin="anonymous"></script>
+		<script src="/searchbox.js"></script>
+		<script src="/overpass.js"></script>
+	</body>
 </html>
