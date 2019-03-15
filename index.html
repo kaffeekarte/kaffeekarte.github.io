@@ -13,18 +13,17 @@
 			<div class="leaflet-control-container">
 				<div class="leaflet-top leaflet-right">
 					<div id="overpass-api-controls" class="leaflet-bar leaflet-control">
-						<img src="search.svg" class="searchImg" />
-						<div id="extended">
 							<div id="searchgroup">
-								<input type="text" onclick="geocode()" placeholder="Stadt" id="searchfield" /><br/>
-								<div id="autocomplete"></div>
-								<label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
+								<img src="menu.svg" onclick='togglemenu();' style='width:30px;height:30px;' /> <input type="text" onclick="geocode()" placeholder="Stadt" id="searchfield" />
 							</div>
-							<hr/>Suche einschränken auf:
-							<div id="filtersGround"></div>
-							<input id="query-button" type="button" value="Neu laden"><br/>
-							<a href="https://github.com/kaffeekarte/kaffeekarte.github.io/blob/master/README.md" target="_blank;" style="color:#0078a8;">Über das Projekt</a>
-						</div>
+							<div id="autocomplete"></div>
+							<div id="extended" style='display:none;'>
+								<label><input type=checkbox id="restaurant">Restaurants miteinbeziehen</label>
+								<hr/>Suche einschränken auf:
+								<div id="filtersGround"></div>
+								<input id="query-button" type="button" value="Neu laden"><br/>
+								<a href="https://github.com/kaffeekarte/kaffeekarte.github.io/blob/master/README.md" target="_blank;" style="color:#0078a8;">Über das Projekt</a>
+							</div>
 					</div>
 				</div>
 			</div>

@@ -1,3 +1,7 @@
+# Keine Unterstützung mehr!
+**Die Kaffeekarte wird nicht weiter gepflegt. Löschanfrage der Domain aus rechtlichen Gründen siehe unten.**
+
+
 https://wiki.openstreetmap.org/wiki/Kaffee-Karte
 
 # Kaffeekarte
@@ -30,7 +34,7 @@ Bei der Verwendung der Suche zur Suche nach einem Ort sendet die Kaffeekarte nac
 
 Beim Besuch der Kaffeekarte fragt Dein Browser diverse Dateien bei fremden Servern ab. Diese Server sind Cacheserver von zwei unterschiedlichen Anbietern. Der erste ist Google und deren Datenschutzerklärung ist [hier einsehbar](https://policies.google.com/privacy#infocollect). Der zweite nennt sich DigitalOcean und hat ebenso eine eigene [Privacy Policy](https://www.digitalocean.com/legal/privacy-policy/). Hierbei sendet Dein Browser Daten an die Server, diesen Vorgang kann die Kaffeekarte nicht beeinflussen.
 
-Die Kaffeekarte nutzt zur Darstellung der Karte und anderen Daten wie z.B. Adresse-, Öffnungszeiten- und Name des Geschäftes/der Einrichtung Kartenmaterial und andere Daten der OpenStreetMap Community. Die OpenStreetMap Foundation hostet diese Daten auf ihren eigenen Servern. Auch diese haben eine eigene [Privacy Policy]( https://wiki.osmfoundation.org/wiki/Privacy_Policy#Data_we_receive_automatically). Die OSM Server erhalten von der Kaffeekarte folgende Informationen: Welche Filter ausgewählt wurden und die Koordinaten des Kartenausschnittes. Desweiteren sendet Dein Browser beim Kontaktieren der OpenStreetMap-Server noch weitere Daten wie z.B. Name des Browsers, Name des Betriebssystems etc. Auf dieses Verhalten Deines Browsers hat die Kaffeekarte keinen Einfluss.
+Die Kaffeekarte nutzt zur Darstellung der Karte und anderen Daten wie z.B. Adresse-, Öffnungszeiten- und Name des Geschäftes/der Einrichtung Kartenmaterial und andere Daten der OpenStreetMap Community. Die OpenStreetMap Foundation hostet diese Daten auf ihren eigenen Servern. Auch diese haben eine eigene [Privacy Policy](https://wiki.osmfoundation.org/wiki/Privacy_Policy). Die OSM Server erhalten von der Kaffeekarte folgende Informationen: Welche Filter ausgewählt wurden und die Koordinaten des Kartenausschnittes. Desweiteren sendet Dein Browser beim Kontaktieren der OpenStreetMap-Server noch weitere Daten wie z.B. Name des Browsers, Name des Betriebssystems etc. Auf dieses Verhalten Deines Browsers hat die Kaffeekarte keinen Einfluss. Sollten weitere von den Nutzer selbst eingegebenen Daten an OpenStreetMap übermittelt werden, so fallen diese ebenso unter die oben verlinkte Privacy Policy. Dies kann der Fall sein, wenn Du eine anonyme Verbesserungsnotiz hinterlässt oder wenn Du Dich bei OpenStreetMap anmeldest.
 
 **Uns ist es technisch nicht möglich Dir Auskünfte über Deine Daten zu erteilen. Wir sammeln Deine Daten nicht und geben die Sammlung dieser auch nicht in Auftrag. Wir wissen nichts über Dich als Nutzer der Kaffeekarte.**
 
@@ -97,3 +101,8 @@ Vor Datenerhebung kann man sich nicht schützen. Man kann aber gesendete/erfasst
 
 - TOR Browser nutzen.
 - Vom Browser gespeicherte Informationen kann man von diesem nach dem Beenden löschen lassen. Lese dazu in der Bedienungsanleitung Deines Browsers nach.
+
+### Warum gibt es kein Impressum?
+Dieses Projekt wurde als Privatprojekt ins Leben gerufen um Orte, an denen es Kaffee gibt, anzuzeigen. Es ist meines Wissens nie für die breite Nutzermasse dazu gedacht gewesen. Desweiteren lese ich aus dem TMG keine Pflicht zum Impressum heraus, denn hier wird keine Dienstleistung oder sonstiges angeboten. Die zum Betrieb der Kaffeekarte erforderlichen Daten kommen von den OpenStreetMap Server und die Daten für die Suche von Komoot, die Kaffeekarte speichert- und verwertet die Daten nicht. Wir bzw. Ich geben die Datensammlung, die die Drittanbieter machen könnten, nicht in Auftrag. Die von der Kaffeekarte angesprochenen Server, wenn sie die Daten speichern, kennen nur allenfalls den Kartenausschnitt, den Namen des Browsers und des verwendeten Betriebssystems. Die Sprache ist immer Deutsch, egal ob die Systemsprache auf Französisch oder Englisch gestellt ist. Der Kartenausschnitt, der Name des Browsers und des verwendeten Betriebssystems sind alles **keine** persönlichen Daten.
+
+Behörden und andere öffentliche Stellen oder auch sich beschwerende Nutzer und andere können sich an [diese E-Mail-Adresse](mailto:valinora@gmx.net) wenden und um Deaktivierung der Domain bitten. Ich werde dieser Aufforderung nachkommen, da ich auch einsehe, dass die Kaffeekarte sich in einen rechtlich schwierigen Rahmen bewegt. Beachte jedoch, dass eventualige Nutzer evtl. enttäuscht sein könnten.

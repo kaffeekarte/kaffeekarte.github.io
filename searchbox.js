@@ -1,13 +1,23 @@
-var supported_languages = ["de", "en", "it", "fr"];
 var saved_lat = 48.160474925320834;
 var saved_lon = 11.4992094039917;
 var maxSouth = 0;
 var maxWest = 0;
 var maxNorth = 0;
 var maxEast = 0;
-var languageOfUser, south_old, west_old, north_old, east_old, maxSouth, maxWest, maxNorth, maxEast;
+var south_old, west_old, north_old, east_old, maxSouth, maxWest, maxNorth, maxEast;
 var poi_markers = new Array();
 var message;
+function togglemenu(value=false) {
+	var obj = document.getElementById("extended");
+	if (value == true) {
+		obj.style.display = "block";
+	}
+	if (obj.style.display != "block") {
+		obj.style.display = "block";
+	} else {
+		obj.style.display = "none";
+	}
+}
 function showGlobalPopup(m) {
 	message = m
 	setTimeout(function() {
@@ -32,32 +42,13 @@ function jumpto(lat, lon, locname="") {
 	$('#query-button').click();
 	showGlobalPopup(locname);
 }
-function languageOfUser() {
-	languageOfUser = navigator.language.toLowerCase();
-	if (languageOfUser.indexOf("-") > -1) {
-		languageOfUser = languageOfUser.split("-");
-		languageOfUser = languageOfUser[0]
-		var supported = false;
-		var index;
-		for (index in supported_languages) {
-			if (supported_languages[index] == languageOfUser) {
-				supported = true;
-				break
-			}
-		}
-		if (!supported) {
-			//The user's language isn't supported by photon.komoot.de, so we set it to standalone english (most of the time it's en-US despite the logic)
-			languageOfUser = "en";
-		}
-	}
-}
 function geocode() {
 	var searchword = $("#searchfield").val();
 	if(searchword.length > 3) {
 		$.getJSON("https://photon.komoot.de/api/", {
 			"q": searchword,
 			"limit": 5,
-			"lang": languageOfUser
+			"lang": "de"
 		}, function(data) {
 			var current_bounds = map.getBounds();
 			var autocomplete_content = "<li>";
@@ -70,8 +61,6 @@ function geocode() {
 		});
 	}
 };
-//choosing language
-languageOfUser();
 // init search
 $("#searchfield").keyup(function() {
 	geocode();
