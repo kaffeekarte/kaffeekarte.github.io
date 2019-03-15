@@ -262,7 +262,7 @@ function loadPOIS(event, bounds="", clear=1) {
 				popupContent += "<a target=\"_blank\" title=\"Eine falsche Information entdeckt? Informiere mithilfe dieses Linkes die OSM Community.\" href=\"https://www.openstreetmap.org/note/new#map=15/" + feature.geometry.coordinates[1] + "/" + feature.geometry.coordinates[0] + "&layers=N\">Falschinformation melden</a>";
 				layer.on("click", function(layer=layer, type=String(feature.properties.type), id=String(feature.properties.id)) {
 					if (popupContent.indexOf("%data_address%") > -1) {
-						$.get("https://nominatim.openstreetmap.org/reverse?accept-language=" + languageOfUser + "&format=json&osm_type=" + type[0].toUpperCase() + "&osm_id=" + id, function(data, status, xhr, trash) {
+						$.get("https://nominatim.openstreetmap.org/reverse?accept-language=de&format=json&osm_type=" + type[0].toUpperCase() + "&osm_id=" + id, function(data, status, xhr, trash) {
 							var address = data["address"];
 							var street = address["road"] || address["pedestrian"] || address["street"] || address["footway"] || address["path"];
 							var housenumber = address["housenumber"] || address["house_number"] || "";
